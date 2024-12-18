@@ -44,4 +44,14 @@
 {{--        });--}}
 {{--    </script>--}}
 @vite('resources/js/app.js')
+{{--    <script src="{{asset('js/app.js')}}"></script>--}}
+{{--    <script>--}}
+{{--        console.log('hello from laravel mix')--}}
+{{--        window.Echo.channel(`new_user_channel`)--}}
+{{--            .listen('.App\\Events\\NewUserRegisteredEvent', (e) => {--}}
+{{--                console.log(e) ;--}}
+{{--                $(" .notificationsIcon").load(" .notificationsIcon > *");--}}
+{{--                $("#notificationModel").load("#notificationModel > *");--}}
+{{--            });--}}
+{{--    </script>--}}
 </head>

@@ -52,6 +52,7 @@ class RegisteredUserController extends Controller
 
         $admin = Admin::find(1);
         Notification::send($admin, new NewUserRegisteredNotification($user));
+//        $user->broadcastChannel();
         NewUserRegisteredEvent::dispatch($user);
 //        NewUserRegisteredEvent2::dispatch('hello from the second event on the same channel');
 //        Broadcast(new NewUserRegisteredEvent());

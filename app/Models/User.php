@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Broadcasting\Channel;
+use Illuminate\Database\Eloquent\BroadcastsEvents;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -11,6 +13,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+//    use BroadcastsEvents ;
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -67,7 +70,7 @@ class User extends Authenticatable
     ##--------------------------------- SCOPES
 
 
-    ##--------------------------------- ACCESSORS & MUTATORS    
+    ##--------------------------------- ACCESSORS & MUTATORS
     /**
      * Interact with the user's password
      *
@@ -83,4 +86,27 @@ class User extends Authenticatable
             },
         );
     }
+
+//    public function broadcastOn(string $event): array
+//    {
+//        return [
+//            new channel('new_user_channel_from_model_broadcasting'),
+//        ];
+//    }
+//
+//    public function broadcastAs(string $event): string|null
+//    {
+//        return match ($event) {
+//            'created' => 'CustomUserCreated',
+//            default => null,
+//        };
+//    }
+//
+//    public function broadcastWith(string $event): array
+//    {
+//        return match ($event) {
+//            'created' => ['email' => $this->email],
+//            default => ['model' => $this],
+//        };
+//    }
 }

@@ -38,18 +38,18 @@ class NewUserRegisteredEvent implements ShouldBroadcast
         ];
     }
 
-    public function broadcastAs(): string
-    {
-        return 'new_user';
-    }
-
-//    public function broadcastWith(): array
+//    public function broadcastAs(): string
 //    {
-//        return ['email' => $this->user->email];
+//        return 'new_user';
 //    }
-
-    public function broadcastWhen(): bool
-    {
-        return $this->new_user->name == 'ahmad';
-    }
+//
+////    public function broadcastWith(): array
+////    {
+////        return ['email' => $this->user->email];
+////    }
+//
+//    public function broadcastWhen(): bool
+//    {
+//        return $this->new_user->name == 'ahmad';
+//    }
 }
